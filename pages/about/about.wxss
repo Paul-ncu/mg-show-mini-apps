@@ -1,0 +1,99 @@
+page {
+  background-color: rgb(230, 230, 230);
+}
+
+.user_info {
+  display: flex;
+  height: 120px;
+  width: 100%;
+  background-color: rgb(250, 250, 250);
+}
+
+.avatar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar image {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+
+.name_works {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.name_works view {
+  display: flex;
+  align-items: center;
+}
+
+.name_works .name {
+  flex: 1;
+  font-size: 20px;
+}
+
+.name_works .works {
+  flex: 1;
+  font-size: 13px;
+  color: rgb(100, 100, 100);
+}
+
+.tool {
+  margin-top: 10rpx;
+}
+
+.tool_item {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  font-size: 16px;
+  background-color: rgb(250, 250, 250);
+}
+
+.title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notice {
+  display: flex;
+  flex: 5;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 2rpx solid rgb(237, 237, 237);
+  color: rgb(100, 100, 100);
+  font-size: 14px;
+}
+
+.notice text {
+  height: 13px;
+  width: 13px;
+  background-color: red;
+  font-size: 8px;
+  line-height: 13px;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.arrow {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2rpx solid rgb(237, 237, 237);
+}
+
+.arrow image {
+  width: 12px;
+  height: 12px;
+}

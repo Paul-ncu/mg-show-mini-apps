@@ -1,0 +1,53 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/works/works",
+    "pages/class/class",
+    "pages/about/about",
+    "pages/myWorks/myWorks",
+    "pages/nickName/nickName",
+    "pages/collection/collection",
+    "pages/comment/comment",
+    "pages/addVideo/addVideo",
+    "pages/addPhoto/addPhoto",
+    "pages/login/login",
+    "pages/detail/detail",
+    "pages/reply/reply",
+    "pages/test/test"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#00BFFF",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#00BFFF",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/tabbar/index_off.png",
+        "selectedIconPath": "./images/tabbar/index_on.png"
+      },
+      {
+        "pagePath": "pages/class/class",
+        "text": "小课堂",
+        "iconPath": "./images/tabbar/class_off.png",
+        "selectedIconPath": "./images/tabbar/class_on.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "我的",
+        "iconPath": "./images/tabbar/about_off.png",
+        "selectedIconPath": "./images/tabbar/about_on.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

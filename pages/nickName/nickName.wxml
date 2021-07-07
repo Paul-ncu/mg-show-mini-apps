@@ -1,0 +1,7 @@
+<view class="name_box">
+  <form bindsubmit="formSubmit">
+    <input name="username" value="{{username}}"></input>
+    <button form-type="submit">保存</button>
+  </form>
+</view>
+<view class="notice">填写学生的名字，让大家更容易发现你</view>

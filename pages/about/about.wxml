@@ -1,0 +1,39 @@
+<view class="user_info">
+  <view class="avatar">
+    <image src="{{user.avatarUrl}}"></image>
+  </view>
+  <view class="name_works">
+    <view class="name">{{user.nickName}}</view>
+    <view class="works"><text space="ensp">我的作品：{{worksCount}}   浏览量：1111   赞：{{likeCount}}</text></view>
+  </view>
+</view>
+<view class="tool">
+  <navigator url="/pages/myWorks/myWorks" class="tool_item">
+    <view class="title">作品</view>
+    <view class="notice"></view>
+    <view class="arrow">
+      <image src="../../images/arrow-right.png"></image>
+    </view>
+  </navigator>
+  <navigator url="/pages/nickName/nickName?username={{user.username}}" class="tool_item">
+    <view class="title">昵称</view>
+    <view class="notice">{{user.username}}</view>
+    <view class="arrow">
+      <image src="../../images/arrow-right.png"></image>
+    </view>
+  </navigator>
+  <navigator url="/pages/collection/collection" class="tool_item">
+    <view class="title">收藏</view>
+    <view class="notice">{{collectionCount}}</view>
+    <view class="arrow">
+      <image src="../../images/arrow-right.png"></image>
+    </view>
+  </navigator>
+  <navigator url="/pages/comment/comment" class="tool_item">
+    <view class="title">评论</view>
+    <view class="notice"><text wx:if="{{countOfNews != 0}}">{{countOfNews}}</text></view>
+    <view class="arrow">
+      <image src="../../images/arrow-right.png"></image>
+    </view>
+  </navigator>
+</view>

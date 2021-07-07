@@ -1,0 +1,23 @@
+<view class="collection_list">
+	<navigator url="/pages/detail/detail?worksStr={{item.worksStr}}" bindlongpress="longpress" class="collection_item" wx:for="{{collections}}" wx:key="id" animation="{{target === index ? ani_bgc : ''}}" data-index="{{index}}" data-id="{{item.id}}">
+		<view wx:if="{{item.works.photosOrVideo}}" class="photo">
+			<view class="show_photo">
+				<image mode="aspectFill" src="{{item.works.photos[0].url}}"></image>
+			</view>
+		</view>
+		<view wx:if="{{!item.works.photosOrVideo}}" class="photo">
+			<view class="show_photo">
+				<image mode="aspectFill" src="{{item.works.video.photo.url}}"></image>
+				<image class="player" src="../../images/player.png"></image>
+			</view>
+		</view>
+		<view class="name_time">
+			<text space="ensp">{{item.works.user.username}} {{item.date}}</text>
+		</view>
+	</navigator>
+	
+</view>
+<view class="delete" bindtap="delete" style="top: {{top}}px;left: {{left}}px; display: {{showDelete ? 'block' : 'none'}}">
+		删除
+</view>
+<view class="mask" bindtap="cancel" catchtouchmove="catchtouchmove" style="display: {{showMask ? 'block' : 'none'}}"></view>

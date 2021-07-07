@@ -1,0 +1,13 @@
+page ,view ,text, swiper, swiper-item, image, navigator, textarea{
+  padding: 0;    
+  margin: 0;
+  box-sizing: border-box;
+}
+
+page{
+  /* 定义主题颜色 */
+  --themeColor: #00BFFF;
+  /* 定义统一字体大小 */
+  font-size: 26rpx;
+}
+

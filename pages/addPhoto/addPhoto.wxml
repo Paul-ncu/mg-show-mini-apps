@@ -1,0 +1,15 @@
+<scroll-view scroll-x="true" style="width: 100%; height: 100px;">
+  <view class="photo_item" wx:for="{{photos}}" wx:key="*this">
+    <image mode="aspectFill" src="{{item}}"></image>
+    <image class="delete" bindtap="delete" data-index="{{index}}" src="../../images/delete_red.png"></image>
+  </view>
+  <view class="photo_item">
+    <image bindtap="selectPhoto" mode="aspectFit" src="../../images/add_photo.png"></image>
+  </view>
+</scroll-view>
+<view class="text_box">
+  <form bindsubmit="formSubmit">
+    <textarea name="introduction" placeholder="输入文字"></textarea>
+    <button form-type="submit">确认</button>
+  </form>
+</view>

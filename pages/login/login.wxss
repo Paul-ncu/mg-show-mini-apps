@@ -1,0 +1,8 @@
+button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: rgb(250, 250, 250);
+  background-color: var(--themeColor);
+}

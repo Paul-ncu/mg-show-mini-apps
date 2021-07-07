@@ -1,0 +1,154 @@
+<wxs module="dateUtil" src="../../utils/timeUtil.wxs"></wxs>
+<swiper wx:if="{{works.photosOrVideo}}" class="swiper" indicator-dots="{{true}}" indicator-active-color="#f1f1f1"
+	indicator-color="rgba(180, 180, 180, .9)" bindtap="back" animation="{{ani_swiper}}">
+	<swiper-item wx:for="{{works.photos}}" wx:key="goods_id">
+		<image bindlongpress="savePhoto" bindtap="cancel" mode="aspectFit" class="swiper_img" src="{{item.url}}"></image>
+	</swiper-item>
+</swiper>
+
+<view bindtap="back" animation="{{ani_swiper}}" class="player" wx:if="{{!works.photosOrVideo}}">
+	<video bindlongpress="savePhoto" bindtap="cancel" src="{{works.video.videoUrl}}" show-fullscreen-btn="{{false}}"
+		show-play-btn="{{false}}" autoplay="{{true}}" loop="{{true}}" controls="{{false}}"></video>
+</view>
+<view class="info">
+	<view class="user_info">
+		<view class="avatar">
+			<image src="{{works.user.avatarUrl}}"></image>
+		</view>
+		<view class="name">{{works.user.username}}</view>
+	</view>
+	<view class="intro">{{works.introduction}}</view>
+</view>
+<view class="tool">
+	<view class="tool_item" bindtap="like">
+		<image bindtransitionend="likeEnd" animation="{{ani_like}}"
+			src="{{like ? '../../images/like/like_on.png' : '../../images/like/like_off.png'}}"></image>
+		<view>{{likeCount}}</view>
+	</view>
+	<view class="tool_item" bindtap="comment">
+		<image src="../../images/comment.png"></image>
+		<view>{{commentCount}}</view>
+	</view>
+	<view class="tool_item" bindtap="keep">
+		<image bindtransitionend="keepEnd" animation="{{ani_keep}}"
+			src="{{keep ? '../../images/keep/keep_on.png' : '../../images/keep/keep_off.png'}}"></image>
+		<view>{{collectionCount}}</view>
+	</view>
+</view>
+<view class="comment" animation="{{ani_comment}}">
+	<view class="comment_title" wx:if="{{!isReply}}">
+		<image bindtap="back" src="../../images/arrow-right.png"></image><text space="ensp"> 评论区({{commentCount}})</text>
+	</view>
+	<view class="comment_title" wx:if="{{isReply}}">
+		<image bindtap="backComment" src="../../images/arrow-right.png"></image><text space="ensp"> 回复</text>
+	</view>
+	<scroll-view wx:if="{{!isReply}}" 
+		scroll-with-animation="{{true}}" 
+		scroll-y="{{true}}" 
+		style="width: 100vw; height: 300px"
+		scroll-into-view="{{'to' + target}}"
+		bindscrolltolower="loadingMore"
+		>
+		
+		<view class="notice" wx:if="{{comments.length === 0}}">暂无评论，赶紧抢沙发~</view>
+		<view wx:if="{{comments.length != 0}}" class="comment_list">
+			<view class="comment_item" data-index="{{index}}" data-name="{{item.user.username}}"
+				data-userid="{{item.user.id}}" data-id="{{item.id}}" bindtap="reply" wx:for="{{pageContent.contentList}}" wx:key="id"
+				id="{{'to' + index}}">
+				<view class="user">
+					<view class="avatar">
+						<image src="{{item.user.avatarUrl}}"></image>
+					</view>
+					<view class="user_name_time">
+						<view class="user_name">{{item.user.username}}</view>
+						<view class="time">{{dateUtil.dateFormat(item.createTime)}}</view>
+					</view>
+				</view>
+				<view class="comment_content">
+					{{item.content}}
+				</view>
+				<view catchtap="viewReply" data-id="{{item.id}}" data-userid="{{item.user.id}}" data-content="{{item.content}}" data-createtime="{{item.createTime}}" data-username="{{item.user.username}}" data-avatar="{{item.user.avatarUrl}}"  data-index="{{index}}" class="reply">
+					<view class="reply_list">
+						<view class="reply_item" wx:if="{{index1 < 2}}" wx:for="{{item.replyComment}}" wx:key="id"
+							wx:for-item="item1" wx:for-index="index1">
+							<text style="color: rgb(61, 140, 245);">{{item1.user.username}}：</text><text space="ensp">{{item1.content}}</text>
+						</view>
+						<view data-comment="{{item}}" data-userid="{{item.user.id}}" data-id="{{item.id}}"
+							class="reply_item" style="color: rgb(61, 140, 245);" wx:if="{{item.replyComment.length != 0}}">
+							{{item.replyComment.length}}条回复></view>
+					</view>
+				</view>
+				<view class="line"></view>
+			</view>
+		</view>
+		<view class="loading" wx:if="{{!pageContent.last}}">
+			<image src="../../images/loading.png"></image><text space="ensp"> 正在加载...</text>
+		</view>
+		<view class="loading" wx:if="{{pageContent.last}}">
+			<text space="ensp">没有更多评论了...</text>
+		</view>
+	</scroll-view>
+	<scroll-view wx:if="{{isReply}}" scroll-with-animation="{{true}}" scroll-y="{{true}}"
+		style="width: 100vw; height: 300px" scroll-into-view="{{'to' + target}}">
+		<view>
+			<view class="parentComment">
+				<view class="user">
+					<view class="avatar">
+						<image src="{{avatar}}"></image>
+					</view>
+					<view class="user_name_time">
+						<view class="user_name">{{username}}</view>
+						<view class="time">{{dateUtil.dateFormat(createTime)}}</view>
+					</view>
+				</view>
+				<view class="comment_content">
+					{{content}}
+				</view>
+			</view>
+			<view class="title">全部评论</view>
+			<view class="loading" wx:if="{{!replyLoading2}}">
+				<image src="../../images/loading.png"></image><text space="ensp"> 正在加载...</text>
+			</view>
+			<view wx:if="{{replyLoading2}}" class="replay_detail_item" data-userid="{{item.user.id}}" data-index="{{index}}"
+				data-name="{{item.user.username}}" data-id="{{item.id}}" bindtap="reply"
+				wx:for="{{currentComment.replyComment}}" wx:key="id">
+				<view class="user">
+					<view class="avatar">
+						<image src="{{item.user.avatarUrl}}"></image>
+					</view>
+					<view class="user_name_time">
+						<view class="user_name">{{item.user.username}}</view>
+						<view class="time">{{dateUtil.dateFormat(item.createTime)}}</view>
+					</view>
+				</view>
+				<view class="comment_content">
+					<text
+						style="color: rgb(61, 140, 245);">{{item.replyUser != null ? '回复@' + item.replyUser.username + '：' : ''}}</text>
+					{{item.content}}
+				</view>
+				<view class="line"></view>
+			</view>
+		</view>
+	</scroll-view>
+	<view class="comment_box">
+		<form class="comment_form" bindsubmit="formSubmit">
+			<textarea name="content" placeholder="{{replyUser ? replyUser : '写评论...'}}" 
+			maxlength="250" 
+			placeholder-class="textarea_class"
+			auto-height="{{true}}"
+			cursor-spacing="24"
+			show-confirm-bar="{{false}}"
+			focus="{{focus}}"
+			bindkeyboardheightchange="keyboardheightchange"
+			value="{{contentVal}}"
+			></textarea>
+			<button form-type="submit" >发送</button>
+		</form>
+	</view>
+</view>
+<view class="mask" catchtouchmove="catchtouchmove" bindtap="keyCancel" style="display: {{maskShow ? 'block' : 'none'}}"></view>
+<view class="save" bindtransitionend="saveEnd" animation="{{ani_save}}">
+	<view class="collPhoto">保存图片</view>
+	<view class="delete" wx:if="{{isMyWorks}}" bindtap="delete">删除</view>
+	<view class="cancel" bindtap="cancel">取消</view>
+</view>

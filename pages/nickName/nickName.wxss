@@ -1,0 +1,30 @@
+.name_box {
+  height: 40px;
+  width: 100vw;
+  
+}
+
+input {
+  padding-left: 10px;
+  height: 100%;
+  font-size: 15px;
+  line-height: 40px;
+  margin: 0 15px;
+  border-bottom: 1rpx solid rgb(230, 230, 230);
+}
+
+button {
+  margin-top: 35px;
+  background-color: var(--themeColor);
+  color: rgb(250, 250, 250);
+}
+
+.notice {
+  position: absolute;
+  top: 45px;
+  height: 20px;
+  margin-left: 15px;
+  line-height: 20px;
+  color: rgb(100, 100, 100);
+  font-size: 12px;
+}

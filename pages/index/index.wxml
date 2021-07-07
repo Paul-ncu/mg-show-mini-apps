@@ -1,0 +1,38 @@
+<view class="works_list">
+	<view class="works_item" wx:for="{{pageContent.contentList}}" wx:key="id">
+		<view class="photo_box" style="height: {{item.showPhoto.height + 'px'}}; width: {{item.showPhoto.width + 'px'}}; left: {{item.showPhoto.left + '%'}}; top: {{item.showPhoto.top + 'px'}}">
+      <navigator url="/pages/works/works?worksStr={{item.worksStr}}" class="box_bgc">
+        <view class="user_info">
+          <view class="introduction">{{item.introduction}}</view>
+          <view class="avatar_name_like">
+            <image class="avatar" src="{{item.user.avatarUrl}}"></image>
+            <view class="name">{{item.user.username}}</view>
+            <view class="like">{{item.view}} 浏览</view>
+          </view>
+        </view>
+        <view class="works_photo">
+          <image class="show_photo"  lazy-load="{{true}}" src="{{item.showPhoto.url}}"></image>
+          <image wx:if="{{!item.photosOrVideo}}" class="player" src="../../images/player.png"></image>
+        </view>
+        
+      </navigator>
+		</view>
+	</view>
+  <view class="loading" style="top: {{position_top[0] >= position_top[1] ? position_top[0] : position_top[1] }}px">
+    <view wx:if="{{pageContent.last}}">没有更多数据了...</view>
+    <view wx:if="{{!pageContent.last}}">
+      <image src="../../images/loading.png"></image><text space="ensp"> 加载更多...</text>
+    </view>
+  </view>
+</view>
+<view class="public" animation="{{ani}}" bindtap="public" style="display: {{addShow ? 'block' : 'none'}}">
+  <image bindtap="public" animation="{{ani_public}}" src="../../images/add.png"></image>
+</view>
+
+<view class="mask" bindtap="delete" animation="{{ani_mask}}" catchtouchmove="catchtouchmove" style="display: {{maskShow ? 'block' : 'none'}}">
+  <view class="tool_list">
+      <image bindtap="delete" class="delete" animation="{{ani_delete}}" src="../../images/delete.png"></image>
+      <image class="photo" bindtap="photo" animation="{{ani_photo}}" src="../../images/photo.png"></image>
+      <image class="video" bindtap="video" bindtransitionend="actionEnd" animation="{{ani_video}}" src="../../images/video.png"></image>
+  </view>
+</view>

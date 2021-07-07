@@ -1,0 +1,10 @@
+<view class="player">
+  <video src="{{videoUrl}}" show-fullscreen-btn="{{false}}" show-play-btn="{{false}}" autoplay="{{true}}" loop="{{true}}" controls="{{false}}"></video>
+</view>
+
+<view class="text_box">
+  <form bindsubmit="formSubmit">
+    <textarea name="introduction" placeholder="请输入文字介绍"></textarea>
+    <button form-type="submit">确认</button>
+  </form>
+</view>

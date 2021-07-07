@@ -1,0 +1,287 @@
+page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+}
+
+.swiper {
+  width: 100%;
+  height: 100vh;
+}
+
+.swiper_img {
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.player {
+  width: 100%;
+  height: 100vh;
+}
+
+.player video {
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  height: 100px;
+  width: 200px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 550;
+}
+
+.info .user_info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar image {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+.info .intro {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.tool {
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+  color: #fff;
+}
+
+.tool .tool_item {
+  flex: 1;
+  width: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tool .tool_item image {
+  width: 30px;
+  height: 30px;
+}
+
+.comment {
+  position: absolute;
+  bottom: -400px;
+  height: 400px;
+  width: 100%;
+  background-color: rgb(250, 250, 250);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.comment_title {
+  height: 60px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.comment_title image {
+  width: 24px;
+  height: 24px;
+  transform: rotate(180deg);
+}
+
+.user {
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+}
+
+.user .avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.user .avatar image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.user .user_name_time {
+  height: 100%;
+  padding-left: 10px;
+}
+
+.user_name {
+  height: 25px;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.time {
+  height: 15px;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgb(100, 100, 100);
+}
+
+.comment_content {
+  margin: 10px 70px;
+}
+
+.reply {
+  margin: 10px 70px;
+  
+}
+
+.reply_list {
+  background-color: rgb(220, 220, 220, .7);
+  border-radius: 5px;
+}
+
+.reply_list .reply_item {
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line {
+  margin: 10px 0 10px 70px;
+  border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+.save {
+  position: absolute;
+  bottom: -150px;
+  height: 150px;
+  width: 100%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: rgb(250, 250, 250);
+}
+
+.save view {
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+.save .delete {
+  color: rgb(242, 47, 47);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  font-size: 16px;
+  padding-left: 10px;
+  border-top: 10px solid rgb(242, 236, 236);
+}
+.comment_box {
+  position: relative;
+  height: 40px;
+  box-shadow: 0px -2px 5px 0px rgba(10, 16, 20, .24);
+}
+.comment_form {
+  width: 100vw;
+  height: 100%;
+}
+
+.comment_form textarea {
+  align-items: center;
+  width: 80vw;
+  font-size: 16px;
+  padding: 10px;
+  height: 40px !important;
+}
+
+.comment_form button {
+  position: absolute !important;
+  right: 0;
+  top: 0;
+  width: 20% !important;
+  height: 40px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: var(--themeColor);
+  color: #fff;
+  border-radius: 0 !important;
+  line-height: 40px;
+  border: none !important;
+  font-weight: 400 !important;
+}
+
+.textarea_class {
+  font-size: 16px;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: calc(100vh - 40px);
+  z-index: 1;
+}
+
+.loading {
+  position: absolute;
+  display: flex;
+  height: 30px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading text {
+  color: rgb(100, 100, 100);
+}
+
+.loading image {
+  height: 20px;
+  width: 20px;
+  animation: loading 1.2s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.notice {
+  text-align: center;
+  padding: 10px;
+  color: rgb(100, 100, 100);
+}

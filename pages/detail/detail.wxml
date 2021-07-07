@@ -1,0 +1,16 @@
+<view class="userInfo">
+  <view class="avatar">
+    <image src="{{works.user.avatarUrl}}"></image>
+  </view>
+  <view class="name">{{works.user.username}}({{works.user.nickName}})</view>
+  <view class="date">{{works.date}}</view>
+</view>
+<view wx:if="{{works.photosOrVideo}}" class="photo_list">
+  <view class="photo_item" wx:for="{{works.photos}}" wx:key="id">
+    <image mode="widthFix" src="{{item.url}}"></image>
+    <view class="line"></view>
+  </view>
+</view>
+<view wx:if="{{!works.photosOrVideo}}" class="video">
+   <video src="{{works.video.videoUrl}}" show-fullscreen-btn="{{false}}" show-play-btn="{{false}}" autoplay="{{true}}" loop="{{true}}" controls="{{false}}"></video>
+</view>

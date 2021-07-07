@@ -1,0 +1,66 @@
+page {
+  background-color: rgb(230, 230, 230);
+}
+
+.collection_item {
+  display: block;
+  height: 130px;
+  margin: 8px;
+  padding-left: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.photo {
+  height: 100px;
+  padding-top: 10px;
+  z-index: 997;
+}
+
+.photo .show_photo{
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.show_photo image {
+  width: 100%;
+  height: 100%;
+}
+
+.photo .player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25px;
+  height: 25px;
+}
+
+.name_time {
+  height: 20px;
+  line-height: 20px;
+  color: rgb(100, 100, 100);
+}
+
+.delete {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  background-color: #fff;
+  box-shadow: 2px 1px 5px 3px rgba(10,10,0,.2);
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+  z-index: 999;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 998;
+  background-color: transparent;
+}

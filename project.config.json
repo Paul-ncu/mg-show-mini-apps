@@ -1,0 +1,151 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": []
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.12.2",
+  "appid": "wx664937a3ae400151",
+  "projectname": "myGirl",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/works/works",
+          "pathName": "pages/works/works",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/test/test",
+          "pathName": "pages/test/test",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/about/about",
+          "pathName": "pages/about/about",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/nickName/nickName",
+          "pathName": "pages/nickName/nickName",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/myWorks/myWorks",
+          "pathName": "pages/myWorks/myWorks",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/comment/comment",
+          "pathName": "pages/comment/comment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/collection/collection",
+          "pathName": "pages/collection/collection",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/addPhoto/addPhoto",
+          "pathName": "pages/addPhoto/addPhoto",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/addVideo/addVideo",
+          "pathName": "pages/addVideo/addVideo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

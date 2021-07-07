@@ -1,0 +1,25 @@
+<scroll-view scroll-y="{{true}}" bindscrolltolower="loadingMore" style="height: 100vh; width: 100vw">
+	<view class="works_list">
+		<view class="works_content" >
+			<view class="works_year" wx:for="{{pageContent.contentList}}" wx:key="year" wx:for-item="item1">
+				<view class="year">{{item1.year}}年</view>
+				<view class="works_month" wx:for="{{item1.worksMap}}" wx:key="month" wx:for-item="item2">
+					<view class="month">{{item2.month}}月</view>
+					<view class="works_item">
+						<navigator url="/pages/works/works?worksStr={{item3.worksStr}}&type=1" wx:for="{{item2.worksArray}}" wx:for-item="item3" wx:key="id" hover-class="none" >
+							<image wx:if="{{item3.photosOrVideo}}" mode="aspectFill" lazy-load="{{true}}" src="{{item3.photos[0].url}}"></image>
+							<image wx:if="{{!item3.photosOrVideo}}" mode="aspectFill" lazy-load="{{true}}" src="{{item3.video.photo.url}}"></image>
+							<image class="player" wx:if="{{!item3.photosOrVideo}}" lazy-load="{{true}}" src="../../images/player.png"></image>
+						</navigator>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="loading" wx:if="{{!pageContent.last}}">
+		<image src="../../images/loading.png"></image><text space="ensp"> 正在加载...</text>
+	</view>
+	<view class="loading" wx:if="{{pageContent.last}}">
+		<text>加载到底了...</text>
+	</view>
+</scroll-view>

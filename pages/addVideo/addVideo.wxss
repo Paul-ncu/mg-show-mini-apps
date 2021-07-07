@@ -1,0 +1,23 @@
+.player {
+  width: 100%;
+}
+
+.player video {
+  width: 100%;
+}
+
+.text_box {
+  width: 100vw;
+}
+form textarea {
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: rgb(230, 230, 230);
+  border-radius: 10px;
+}
+
+button {
+  color: rgb(250, 250, 250);
+  background-color: var(--themeColor);
+}

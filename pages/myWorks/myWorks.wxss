@@ -1,0 +1,88 @@
+page {
+  width: 100%;
+}
+
+.works_list {
+  margin: 0 4vw;
+}
+
+.year {
+  height: 40px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.works_month {
+  display: flex;
+}
+
+.month {
+  flex: 1;
+  width: 23vw;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.works_item {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 3;
+}
+
+.works_item navigator {
+  position: relative;
+  display: flex;
+  width: 23vw;
+  height: 23vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.works_item navigator image {
+  width: 90%;
+  height: 90%;
+}
+
+.works_item navigator .player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25px;
+  height: 25px;
+
+}
+
+.works_year {
+  margin-bottom: 20px;
+}
+
+.loading {
+  position: absolute;
+  display: flex;
+  height: 30px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(100, 100, 100);
+}
+
+.loading image {
+  height: 20px;
+  width: 20px;
+  animation: loading 1.2s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

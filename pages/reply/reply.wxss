@@ -1,0 +1,44 @@
+.reply_box {
+  padding: 10px;
+}
+.reply_box textarea {
+  width: 100%;
+  font-size: 14px;
+}
+
+.pla_class {
+  font-size: 14px;
+}
+
+button {
+  width: 20% !important;
+  height: 40px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  line-height: 40px;
+  border: none !important;
+  font-weight: 400 !important;
+  margin-top: 20px;
+  background-color: transparent !important;
+}
+
+.comment {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.comment .content {
+  width: 80%;
+  padding: 10px;
+  background-color: rgb(200, 200, 200, .5);
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+button image {
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+}

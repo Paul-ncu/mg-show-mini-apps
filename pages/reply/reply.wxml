@@ -1,0 +1,15 @@
+<view class="reply_box">
+  <form bindsubmit="formSubmit">
+    <textarea 
+    name="content" 
+    placeholder="回复 {{comment.user.username}}"
+    auto-height="{{true}}"
+    placeholder-class="pla_class"
+    ></textarea>
+    <view class="comment">
+      <view class="content">{{comment.user.username}}：{{comment.content}}</view>
+      <button form-type="submit"><image src="../../images/Send message.png"></image></button>
+    </view>
+    
+  </form>
+</view>
